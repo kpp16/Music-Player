@@ -11,8 +11,8 @@ const AudioPlayer = () => {
     const [musicName, setMusicName] = useState("Current Music Name");
     const [source, setSource] = useState("../../static/cipher.mp3");
 
-    const audioPlayerRef = useRef<HTMLAudioElement | null>();
-    const progressBar = useRef<HTMLInputElement | null>();
+    const audioPlayerRef = useRef<HTMLAudioElement | null>(null);
+    const progressBar = useRef<HTMLInputElement | null>(null);
     const animationRef = useRef<Number | 0>();
 
     const togglePlayPause = () => {
