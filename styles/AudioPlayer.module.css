@@ -10,13 +10,13 @@
     background-color: rgb(14, 16, 37);
 }
 
-@media only screen and (min-device-width: 500px) {
+@media only screen and (max-device-width: 520px) {
     .forwardBackward {
         font-family: monospace;
         justify-content: center;
         background-color: #4CAF50;
-        color: white;
-        padding: 16px 32px;
+        color: rgb(255, 255, 255);
+        padding: 8px 16px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -28,20 +28,22 @@
     }
 }
 
-.forwardBackward {
-    font-family: monospace;
-    justify-content: center;
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 2px 1px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border: 2px solid #4CAF50;
+@media only screen and (min-device-width: 520px) {
+    .forwardBackward {
+        font-family: monospace;
+        justify-content: center;
+        background-color: #4CAF50;
+        color: rgb(255, 255, 255);
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 1px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border: 2px solid #4CAF50;
+    }
 }
 
 .forwardBackward:hover {
@@ -49,7 +51,25 @@
     border: 2px solid #4CAF50;
 }
 
-@media only screen and (min-device-width: 500px) {
+@media only screen and (max-device-width: 520px) {
+    .playPause {
+        font-family: monospace;
+        justify-content: center;
+        background-color: #f3f031;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border: 2px solid #f3f031;
+    }
+}
+
+@media only screen and (min-device-width: 520px) {
     .playPause {
         font-family: monospace;
         justify-content: center;
@@ -65,22 +85,6 @@
         cursor: pointer;
         border: 2px solid #f3f031;
     }
-}
-
-.playPause {
-    font-family: monospace;
-    justify-content: center;
-    background-color: #f3f031;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border: 2px solid #f3f031;
 }
 
 .playPause:hover {
@@ -102,6 +106,13 @@
     padding-top: 15px;
 }
 
+@media only screen and (max-device-width: 740px){
+    .imageDiv {
+        width: 30vw;
+        height: 30vh;
+    }
+}
+
 @media only screen and (min-device-width: 740px){
     .imageDiv {
         width: 30vw;
@@ -109,7 +120,25 @@
     }
 }
 
-@media only screen and (min-device-width: 500px) {
+@media only screen and (max-device-width: 520px) {
+    .beforeAfter {
+        font-family: monospace;
+        justify-content: center;
+        background-color: #5658d4;
+        color: rgb(255, 255, 255);
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border: 2px solid #5658d4;
+    }
+}
+
+@media only screen and (min-device-width: 520px) {
     .beforeAfter {
         font-family: monospace;
         justify-content: center;
@@ -125,22 +154,6 @@
         cursor: pointer;
         border: 2px solid #5658d4;
     }
-}
-
-.beforeAfter {
-    font-family: monospace;
-    justify-content: center;
-    background-color: #5658d4;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border: 2px solid #5658d4;
 }
 
 .beforeAfter:hover {
