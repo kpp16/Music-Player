@@ -10,17 +10,35 @@
     background-color: rgb(14, 16, 37);
 }
 
+@media only screen and (min-device-width: 500px) {
+    .forwardBackward {
+        font-family: monospace;
+        justify-content: center;
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border: 2px solid #4CAF50;
+    }
+}
+
 .forwardBackward {
     font-family: monospace;
     justify-content: center;
     background-color: #4CAF50;
     color: white;
-    padding: 16px 32px;
+    padding: 8px 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
+    font-size: 16px;
+    margin: 2px 1px;
     transition-duration: 0.4s;
     cursor: pointer;
     border: 2px solid #4CAF50;
@@ -31,16 +49,34 @@
     border: 2px solid #4CAF50;
 }
 
+@media only screen and (min-device-width: 500px) {
+    .playPause {
+        font-family: monospace;
+        justify-content: center;
+        background-color: #f3f031;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border: 2px solid #f3f031;
+    }
+}
+
 .playPause {
     font-family: monospace;
     justify-content: center;
     background-color: #f3f031;
     color: white;
-    padding: 16px 32px;
+    padding: 8px 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
+    font-size: 16px;
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
@@ -66,11 +102,29 @@
     padding-top: 15px;
 }
 
-.image {
-    width: 30vw;
-    height: 70vh;
-    padding-bottom: 30px;
-    padding-top: 15px;
+@media only screen and (min-device-width: 740px){
+    .imageDiv {
+        width: 30vw;
+        height: 70vh;
+    }
+}
+
+@media only screen and (min-device-width: 500px) {
+    .beforeAfter {
+        font-family: monospace;
+        justify-content: center;
+        background-color: #5658d4;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border: 2px solid #5658d4;
+    }
 }
 
 .beforeAfter {
@@ -78,11 +132,11 @@
     justify-content: center;
     background-color: #5658d4;
     color: white;
-    padding: 16px 32px;
+    padding: 8px 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
+    font-size: 16px;
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
@@ -91,4 +145,11 @@
 
 .beforeAfter:hover {
     background-color: #3234ce;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    padding-bottom: 5%;
+    padding-top: 15px;
 }

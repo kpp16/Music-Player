@@ -83,7 +83,9 @@ const AudioPlayer = () => {
         <div className={styles.heading}>
             <h2>{musicName}</h2>
             <br />
-            <img className={styles.image} src="../../static/img1.png"></img>
+            <div className={styles.imageDiv}>
+                <img className={styles.image} src="../../static/img1.png"></img>
+            </div>
             <div>
                 <div className={styles.sliderTime}>
                     {/* Current Time */}
