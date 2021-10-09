@@ -9,8 +9,10 @@ app.include_router(audioController.router)
 
 origins = [
     "http://192.168.29.52:3000",
-    "http://localhost:3000,
-    "https://music-player-6fegg6s8n-kaipar.vercel.app/"
+    "http://localhost:3000",
+    "https://music-player-6fegg6s8n-kaipar.vercel.app/",
+    "https://music-player-lilac.vercel.app/",
+    "https://f7aa-183-83-187-103.ngrok.io/audiocontroller/next/1",
 ]
 
 app.add_middleware(

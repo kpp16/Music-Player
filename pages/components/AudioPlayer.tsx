@@ -19,7 +19,7 @@ const AudioPlayer = () => {
     const progressBar = useRef<HTMLInputElement | null>(null);
     const animationRef = useRef<Number | 0>();
 
-    const url = "https://f7aa-183-83-187-103.ngrok.io/audiocontroller/next/";
+    const url = "https://cead-183-83-187-103.ngrok.io/audiocontroller/next/";
 
 
     // Fetch data from the backend to load music when the page is refreshed
