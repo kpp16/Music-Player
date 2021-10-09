@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, LegacyRef} from 'react';
+import React, {useState, useEffect, useRef, LegacyRef, useCallback} from 'react';
 import styles from '../../styles/AudioPlayer.module.css';
 import { GrPlayFill, GrPauseFill } from 'react-icons/gr';
 import {BsArrowRight, BsArrowLeft} from 'react-icons/bs';
@@ -8,12 +8,80 @@ const AudioPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
-    const [musicName, setMusicName] = useState("Current Music Name");
+    const [musicName, setMusicName] = useState("");
     const [source, setSource] = useState("../../static/cipher.mp3");
+    const [imgSource, setImgSource] = useState("../../static/img1.png");
+    const [audioData, setAudioData] = useState("");
+    const [id, setID] = useState(1);
 
+    // References
     const audioPlayerRef = useRef<HTMLAudioElement | null>(null);
     const progressBar = useRef<HTMLInputElement | null>(null);
     const animationRef = useRef<Number | 0>();
+
+    const url = "https://f7aa-183-83-187-103.ngrok.io/audiocontroller/next/";
+
+
+    // Fetch data from the backend to load music when the page is refreshed
+    useEffect(() => {
+        const fetch_data = async () => {
+            const uurl = url + "1";
+            console.log("URL:", uurl);
+            try{
+                const res = await fetch(uurl);
+                const audio_data = await res.json();
+                console.log("Audio data: ", audio_data);
+                setAudioData(audio_data);
+                setMusicName(audio_data.name);
+                setSource(audio_data.audioLocation);
+                setImgSource(audio_data.imageLocation);
+                setID(audio_data.id);
+            } catch (error) {
+                console.log("Error fetching URL: ", error);
+            }
+        };
+        fetch_data();
+    }, []);
+
+    // Previous and next buttons
+    const next = useCallback(async () => {
+        const new_id = id + 1;
+        const uurl = url + String(new_id);
+            console.log("URL:", url);
+            try{
+                const res = await fetch(uurl);
+                const audio_data = await res.json();
+                console.log("Audio data: ", audio_data);
+                setAudioData(audio_data);
+                setMusicName(audio_data.name);
+                setSource(audio_data.audioLocation);
+                setImgSource(audio_data.imageLocation);
+                setID(audio_data.id);
+                start();
+                setIsPlaying(true);
+            } catch (error) {
+                console.log("Error fetching URL: ", error);
+            }
+    }, [id]);
+    const prev = useCallback(async () => {
+        const new_id = id - 1;
+        const uurl = url + String(new_id);
+            console.log("URL:", url);
+            try{
+                const res = await fetch(uurl);
+                const audio_data = await res.json();
+                console.log("Audio data: ", audio_data);
+                setAudioData(audio_data);
+                setMusicName(audio_data.name);
+                setSource(audio_data.audioLocation);
+                setImgSource(audio_data.imageLocation);
+                setID(audio_data.id);
+                start();
+                setIsPlaying(true);
+            } catch (error) {
+                console.log("Error fetching URL: ", error);
+            }
+    }, [id]);
 
     const togglePlayPause = () => {
         const prev = isPlaying
@@ -29,7 +97,7 @@ const AudioPlayer = () => {
     useEffect(() => {
         isPlaying? audioPlayerRef.current?.play() : audioPlayerRef.current?.pause();
     },
-    [isPlaying, audioPlayerRef])
+    [isPlaying, audioPlayerRef]);
 
     useEffect(() => {
         var seconds = audioPlayerRef.current?.duration;
@@ -42,7 +110,7 @@ const AudioPlayer = () => {
         setDuration(seconds);
         progressBar.current!.max = String(seconds);
 
-    }, [audioPlayerRef?.current?.onloadeddata, audioPlayerRef?.current?.readyState])
+    }, [audioPlayerRef?.current?.onloadeddata, audioPlayerRef?.current?.readyState]);
 
     const whilePlaying = () => {
         progressBar.current!.value = String(audioPlayerRef.current!.currentTime);
@@ -79,12 +147,18 @@ const AudioPlayer = () => {
         changeRange();
     }
 
+    const start = () => {
+        progressBar.current!.value = "0";
+        changeRange();
+        setIsPlaying(false);
+    }
+
     return(
         <div className={styles.heading}>
             <h2>{musicName}</h2>
             <br />
             <div className={styles.imageDiv}>
-                <img className={styles.image} src="../../static/img1.png"></img>
+                <img className={styles.image} src={imgSource}></img>
             </div>
             <div>
                 <div className={styles.sliderTime}>
@@ -98,7 +172,7 @@ const AudioPlayer = () => {
                 <br />
 
                 {/* Song before */}
-                <button className={styles.beforeAfter}><GiPreviousButton /></button>
+                <button className={styles.beforeAfter} onClick={prev}><GiPreviousButton /></button>
 
                 {/* seek backward */}
                 <button className={styles.forwardBackward} onClick={backTen}><BsArrowLeft /> 10</button>
@@ -110,7 +184,7 @@ const AudioPlayer = () => {
                 <button className={styles.forwardBackward} onClick={forwardTen}><BsArrowRight /> 10</button>
 
                 {/* Song after */}
-                <button className={styles.beforeAfter}><GiNextButton /></button>
+                <button className={styles.beforeAfter} onClick={next}><GiNextButton /></button>
 
                 <audio id = "a1" preload="metadata" ref={audioPlayerRef} src={source}>
                 </audio>
