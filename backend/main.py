@@ -1,7 +1,7 @@
 from routers.audioController import index
 from fastapi import FastAPI, Depends
 from routers import audioController
-from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
@@ -12,7 +12,6 @@ origins = [
     "http://localhost:3000",
     "https://music-player-6fegg6s8n-kaipar.vercel.app/",
     "https://music-player-lilac.vercel.app/",
-    "https://f7aa-183-83-187-103.ngrok.io/audiocontroller/next/1",
 ]
 
 app.add_middleware(

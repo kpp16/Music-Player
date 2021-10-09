@@ -21,14 +21,18 @@ const AudioPlayer = () => {
 
     const url = "https://cead-183-83-187-103.ngrok.io/audiocontroller/next/";
 
-
     // Fetch data from the backend to load music when the page is refreshed
     useEffect(() => {
         const fetch_data = async () => {
             const uurl = url + "1";
             console.log("URL:", uurl);
             try{
-                const res = await fetch(uurl);
+                const res = await fetch(uurl, {
+                    method: "GET",
+                    mode: "cors",
+                    cache: 'no-cache',
+                    credentials: 'same-origin'
+                });
                 const audio_data = await res.json();
                 console.log("Audio data: ", audio_data);
                 setAudioData(audio_data);
@@ -49,7 +53,12 @@ const AudioPlayer = () => {
         const uurl = url + String(new_id);
             console.log("URL:", url);
             try{
-                const res = await fetch(uurl);
+                const res = await fetch(uurl, {
+                    method: "GET",
+                    mode: "cors",
+                    cache: 'no-cache',
+                    credentials: 'same-origin'
+                });
                 const audio_data = await res.json();
                 console.log("Audio data: ", audio_data);
                 setAudioData(audio_data);
