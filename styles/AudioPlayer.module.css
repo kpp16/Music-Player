@@ -161,8 +161,11 @@
 }
 
 .image {
-    width: 100%;
-    height: auto;
-    padding-bottom: 5%;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ /* height: auto; */
+    padding-bottom: 100%;
     padding-top: 15px;
 }
