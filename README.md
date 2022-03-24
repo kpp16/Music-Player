@@ -33,4 +33,4 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-![ScreenshotMobile](https://github.com/kpp16/Music-Player/blob/main/Screenshot%202022-03-24%20at%2000-53-09%20Screenshot.png)
+![ScreenshotMobile](https://github.com/kpp16/Music-Player/blob/main/Screenshot%202022-03-24%20at%2000-55-21%20Screenshot.png)
