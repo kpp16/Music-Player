@@ -1,27 +1,45 @@
+# Music Player
+
+## About the Project
 A music player built using NextJS and Python FastAPI.
 
-To run, you must first install the required python libraries in a virtual environment:
+![ScreenshotPC](https://github.com/kpp16/Music-Player/blob/main/Screenshot%202022-03-24%20at%2000-59-30%20Screenshot.png)
+
+
+### Built With
+1. [Python](https://www.python.org/)
+2. [FastAPI](https://fastapi.tiangolo.com/)
+3. [NextJS](https://nextjs.org/)
+
+## Getting Started
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+1. [Python](https://www.python.org/)
+2. [NodeJS](https://nodejs.org/en/)
+3. npm
+   ```
+   npm install npm@latest -g
+   ```
+
+### Installation
+1. Install FastAPI in your python virtual environemnt
 ```
 pip install "fastapi[all]"
 ```
-After installing FastAPI, you can run the server by:
-```
-uvicorn main:app --reload
-```
 
-To get the frontend running, you need to install all node packages in the package.json file.
-Simply execute the command:
+2. Install the node dependencies
 ```
 npm install
 ```
-To install all the required node packages.
 
-To run the frontend app after installing all the dependencies,
+### Running the app locally
+1. Start the backend server
+```
+uvicorn main:app --reload
+```
+2. Start the frontend server
 ```
 npm run dev
 ```
-
-Visit ```http://localhost:3000``` to visit the music player.
-
-![ScreenshotMobile](https://github.com/kpp16/Music-Player/blob/main/Screenshot%202022-03-24%20at%2000-55-21%20Screenshot.png)
-![ScreenshotPC](https://github.com/kpp16/Music-Player/blob/main/Screenshot%202022-03-24%20at%2000-59-30%20Screenshot.png)
+Visit ```http://localhost:3000``` to view the app in your browser.
