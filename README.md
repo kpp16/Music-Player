@@ -1,37 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A music player built using NextJS and Python FastAPI.
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+To run, you must first install the required python libraries in a virtual environment:
+```
+pip install "fastapi[all]"
+```
+After installing FastAPI, you can run the server by:
+```
+uvicorn main:app --reload
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To get the frontend running, you need to install all node packages in the package.json file.
+Simply execute the command:
+```
+npm install
+```
+To install all the required node packages.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+To run the frontend app after installing all the dependencies,
+```
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Visit ```http://localhost:3000``` to visit the music player.
 
 ![ScreenshotMobile](https://github.com/kpp16/Music-Player/blob/main/Screenshot%202022-03-24%20at%2000-55-21%20Screenshot.png)
 ![ScreenshotPC](https://github.com/kpp16/Music-Player/blob/main/Screenshot%202022-03-24%20at%2000-59-30%20Screenshot.png)
